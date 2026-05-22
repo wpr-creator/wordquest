@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WORD QUEST 🗡️</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:wght@700;800;900&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
 <style>
 /* ─── RESET & ROOT ──────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -12,8 +12,13 @@
   --black:#0f0f23;--white:#f8f8f8;--gold:#ffd700;--red:#ff4757;
   --green:#2ed573;--blue:#1e90ff;--purple:#a29bfe;--orange:#fd9644;
   --pink:#fd79a8;--teal:#2dd4bf;--yellow:#fdcb6e;--sky:#74b9ff;
+  --body-font:'Nunito',sans-serif;
+  --quest-font:'Bree Serif',serif;
+  --button-font:'Fredoka',sans-serif;
+  --min-readable:22px;
 }
-body{font-family:'Press Start 2P',monospace;background:var(--black);color:var(--white);min-height:100vh;overflow-x:hidden}
+html{font-size:22px}
+body{font-family:var(--body-font);background:var(--black);color:var(--white);min-height:100vh;overflow-x:hidden;font-size:var(--min-readable);line-height:1.45}
 .screen{display:none;min-height:100vh;flex-direction:column;align-items:center}
 .screen.active{display:flex}
 button{cursor:pointer}
@@ -39,7 +44,7 @@ button{cursor:pointer}
 .pb{border:4px solid var(--white);box-shadow:4px 4px 0 #000}
 .pb-gold{border:4px solid var(--gold);box-shadow:4px 4px 0 #000,0 0 18px rgba(255,215,0,.3)}
 .pxbtn{
-  font-family:'Press Start 2P',monospace;
+  font-family:var(--button-font);
   font-size:clamp(.5rem,1.4vw,.72rem);
   padding:12px 22px;border:4px solid #000;
   box-shadow:4px 4px 0 #000;letter-spacing:1px;
@@ -105,7 +110,7 @@ button{cursor:pointer}
 .hud-hp{font-size:1rem;letter-spacing:2px}
 .hud-pts{font-size:clamp(.38rem,1.1vw,.52rem);color:var(--green)}
 .hud-mapbtn{
-  font-family:'Press Start 2P',monospace;font-size:.4rem;
+  font-family:var(--button-font);font-size:.4rem;
   background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.3);
   color:#fff;padding:5px 9px;letter-spacing:1px
 }
@@ -132,7 +137,7 @@ button{cursor:pointer}
 .ans-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:700px;width:100%}
 @media(max-width:480px){.ans-grid{grid-template-columns:1fr}}
 .ans-btn{
-  font-family:'Press Start 2P',monospace;
+  font-family:var(--button-font);
   font-size:clamp(.52rem,1.5vw,.72rem);
   padding:14px 12px;background:#1a1a4e;
   border:4px solid #4a4a8a;color:var(--white);
@@ -150,7 +155,7 @@ button{cursor:pointer}
 .sort-wrap{width:100%;max-width:700px;display:flex;flex-direction:column;gap:12px}
 .sort-pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:48px;padding:10px;background:rgba(0,0,0,.3);border:3px solid rgba(255,255,255,.15)}
 .sort-chip{
-  font-family:'Press Start 2P',monospace;font-size:clamp(.48rem,1.3vw,.62rem);
+  font-family:var(--button-font);font-size:clamp(.48rem,1.3vw,.62rem);
   background:#2a1a6e;border:3px solid var(--purple);color:var(--white);
   padding:8px 13px;box-shadow:3px 3px 0 #000;transition:all .1s;letter-spacing:1px;line-height:1.6
 }
@@ -165,7 +170,7 @@ button{cursor:pointer}
 }
 .sort-bin:hover{border-color:var(--gold)}
 .bin-label{font-size:clamp(.44rem,1.1vw,.58rem);color:var(--sky);letter-spacing:1px;text-align:center;padding-bottom:6px;border-bottom:2px solid rgba(255,255,255,.18)}
-.bin-chip{font-family:'Press Start 2P',monospace;font-size:clamp(.4rem,1vw,.5rem);background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);padding:4px 7px;color:var(--white);margin-top:3px}
+.bin-chip{font-family:var(--button-font);font-size:clamp(.4rem,1vw,.5rem);background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);padding:4px 7px;color:var(--white);margin-top:3px}
 .bin-chip.correct-chip{border-color:var(--green);color:var(--green)}
 .bin-chip.wrong-chip{border-color:var(--red);color:var(--red)}
 
@@ -175,7 +180,7 @@ button{cursor:pointer}
 .match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 @media(max-width:500px){.match-grid{grid-template-columns:repeat(2,1fr)}}
 .m-card{
-  font-family:'Press Start 2P',monospace;font-size:clamp(.52rem,1.4vw,.68rem);
+  font-family:var(--button-font);font-size:clamp(.52rem,1.4vw,.68rem);
   padding:13px 8px;background:#0d1a3d;border:4px solid #2a3a6e;
   color:var(--white);text-align:center;box-shadow:4px 4px 0 #000;
   min-height:58px;display:flex;align-items:center;justify-content:center;
@@ -195,7 +200,7 @@ button{cursor:pointer}
 }
 .fix-opts{display:flex;flex-direction:column;gap:8px;width:100%;max-width:640px}
 .fix-opt{
-  font-family:'Press Start 2P',monospace;font-size:clamp(.48rem,1.3vw,.65rem);
+  font-family:var(--button-font);font-size:clamp(.48rem,1.3vw,.65rem);
   background:#0d1a2d;border:3px solid #2a3a5a;color:var(--sky);
   padding:12px 15px;box-shadow:3px 3px 0 #000;line-height:1.9;
   text-align:left;transition:all .1s;letter-spacing:.8px
@@ -268,7 +273,7 @@ button{cursor:pointer}
 }
 .word-bank{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:660px}
 .wb-chip{
-  font-family:'Press Start 2P',monospace;font-size:clamp(.48rem,1.2vw,.62rem);
+  font-family:var(--button-font);font-size:clamp(.48rem,1.2vw,.62rem);
   background:#1a0d3d;border:3px solid #4a3a8e;color:var(--purple);
   padding:8px 12px;box-shadow:3px 3px 0 #000;transition:all .1s;letter-spacing:1px
 }
@@ -405,6 +410,142 @@ button{cursor:pointer}
   animation:lifeLost .4s ease-out;
 }
 
+
+
+/* ─── READABLE RPG REBUILD OVERRIDES ─────────────────────────
+   Baseline rule: no functional text below 22px for 2nd graders.
+   Decorative headings can be bigger; tiny UI is intentionally removed.
+────────────────────────────────────────────────────────────── */
+body, button, input, select, textarea { font-family:var(--body-font) !important; }
+.title-logo, .map-title, .zc-title, .go-title, .pcbox-title, .quest-heading { font-family:var(--quest-font) !important; }
+.pxbtn, .ans-btn, .sort-chip, .m-card, .fix-opt, .wb-chip, .hud-mapbtn, .zone-tile, .tap-word { font-family:var(--button-font) !important; }
+
+.screen { font-size:1rem; }
+.pxbtn,
+.ans-btn,
+.sort-chip,
+.m-card,
+.fix-opt,
+.wb-chip,
+.tap-word,
+.hud-mapbtn {
+  font-size:clamp(1rem,2.4vw,1.35rem) !important;
+  line-height:1.35 !important;
+  letter-spacing:.5px !important;
+}
+
+.hud{
+  display:grid !important;
+  grid-template-columns:1fr 1fr 1fr !important;
+  align-items:center !important;
+  gap:10px !important;
+  padding:14px 16px !important;
+  background:rgba(0,0,0,.82) !important;
+}
+.hud-hero,.hud-zone,.hud-q,.hud-hp,.hud-pts,.hud-coins,.hud-mapbtn{
+  font-size:clamp(1rem,2.3vw,1.35rem) !important;
+  line-height:1.25 !important;
+  letter-spacing:.5px !important;
+  color:var(--white);
+  text-align:center;
+  font-weight:900;
+}
+.hud-zone{color:var(--gold) !important; grid-column:span 2; text-align:left !important;}
+.hud-hp{font-size:clamp(1.2rem,3vw,1.6rem) !important;}
+.hud-mapbtn{padding:10px 14px !important;border:3px solid rgba(255,255,255,.35) !important;}
+
+.map-title{font-size:clamp(2rem,5vw,3rem) !important;letter-spacing:2px !important;}
+.map-sub{font-size:clamp(1.1rem,2.5vw,1.5rem) !important;line-height:1.4 !important;color:var(--yellow) !important;}
+.map-grid{grid-template-columns:repeat(2,1fr) !important;gap:18px !important;max-width:1000px !important;}
+.zone-tile{min-height:180px !important;padding:22px 14px !important;gap:12px !important;}
+.zt-num{font-size:1rem !important;}
+.zt-emo{font-size:4rem !important;}
+.zt-name{font-size:clamp(1.15rem,2.4vw,1.5rem) !important;line-height:1.25 !important;}
+.zt-star{font-size:1.7rem !important;}
+
+.gbg{gap:18px !important;padding:18px !important;padding-bottom:90px !important;}
+#gameArea{max-width:920px !important;gap:18px !important;}
+.prog-wrap{max-width:920px !important;height:24px !important;border-width:4px !important;}
+.q-box,
+.broken-box,
+.tap-sentence,
+.fill-sent,
+.chain-q{
+  max-width:920px !important;
+  font-size:clamp(1.25rem,2.8vw,1.8rem) !important;
+  line-height:1.55 !important;
+  padding:26px !important;
+}
+.q-label,
+.tap-instr,
+.match-instr,
+.bin-label{
+  font-size:clamp(1rem,2vw,1.3rem) !important;
+  line-height:1.35 !important;
+  letter-spacing:.5px !important;
+}
+.ans-grid,.fix-opts,.word-bank,.match-wrap,.sort-wrap,.tap-wrap,.fill-wrap{max-width:920px !important;}
+.ans-grid{gap:16px !important;}
+.ans-btn{padding:22px 18px !important;min-height:92px !important;}
+.feedback{font-size:clamp(1.15rem,2.5vw,1.6rem) !important;line-height:1.4 !important;min-height:2rem !important;}
+
+.sort-pool{gap:14px !important;min-height:80px !important;padding:16px !important;}
+.sort-chip{padding:14px 18px !important;}
+.sort-bins{gap:16px !important;}
+.sort-bin{min-height:150px !important;padding:16px !important;}
+.bin-chip{font-size:1rem !important;padding:10px 12px !important;line-height:1.3 !important;}
+.match-grid{gap:14px !important;}
+.m-card{min-height:96px !important;padding:20px 14px !important;}
+.fix-opt{padding:20px 18px !important;text-align:left !important;}
+.tap-word{padding:8px 10px !important;margin:4px !important;border-width:3px !important;}
+.blank{min-width:130px !important;}
+
+.zc-score,.go-sub,.go-zone,#zcSubMsg,.blink-txt{
+  font-size:clamp(1rem,2.5vw,1.35rem) !important;
+  line-height:1.5 !important;
+}
+.go-title,.zc-title{font-size:clamp(2rem,5vw,3rem) !important;}
+
+.quest-banner{
+  width:100%;max-width:920px;
+  background:rgba(0,0,0,.62);
+  border:4px solid var(--gold);
+  box-shadow:5px 5px 0 #000;
+  padding:18px 22px;
+  text-align:center;
+}
+.enemy-line{
+  font-family:var(--quest-font) !important;
+  color:var(--gold);
+  font-size:clamp(1.35rem,3vw,2rem);
+  line-height:1.2;
+}
+.quest-instruction{
+  margin-top:8px;
+  color:rgba(255,255,255,.92);
+  font-size:clamp(1.05rem,2.2vw,1.35rem);
+  line-height:1.35;
+  font-weight:900;
+}
+.treasure-pop,.enemy-hit-pop{
+  position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);
+  z-index:9999;text-align:center;
+  border:5px solid #000;box-shadow:7px 7px 0 #000;
+  border-radius:18px;padding:24px 34px;
+  font-family:var(--button-font) !important;
+  animation:pop .2s ease-out;
+}
+.treasure-pop{background:linear-gradient(135deg,#fff4b0,#ffd700);color:#1a1a1a;}
+.enemy-hit-pop{background:#3d0d0d;color:#fff;border-color:var(--red);font-size:clamp(1.1rem,3vw,1.6rem);}
+.treasure-icon{font-size:3rem}.treasure-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:900}.treasure-item{font-size:clamp(1.05rem,2.4vw,1.4rem);margin-top:6px}.treasure-reward{font-size:clamp(1.1rem,2.5vw,1.5rem);color:#5a3a00;margin-top:6px;font-weight:900}
+
+@media(max-width:700px){
+  .hud{grid-template-columns:1fr 1fr !important;}
+  .hud-zone{grid-column:span 2;text-align:center !important;}
+  .map-grid{grid-template-columns:1fr !important;}
+  .ans-grid,.sort-bins,.chain-grid{grid-template-columns:1fr !important;}
+}
+
 </style>
 </head>
 <body>
@@ -436,10 +577,12 @@ button{cursor:pointer}
 <!-- GAME -->
 <div id="game" class="screen">
   <div class="hud">
+    <div class="hud-hero">🧙 LVL <span id="hudLevel">1</span></div>
     <div class="hud-zone" id="hudZone">ZONE 1</div>
     <div class="hud-q" id="hudQ">Q: 1/8</div>
     <div class="hud-hp" id="hudHP">❤️❤️❤️</div>
     <div class="hud-pts" id="hudPts">⭐ 0</div>
+    <div class="hud-coins" id="hudCoins">🪙 0</div>
     <button class="hud-mapbtn" onclick="goMap()" id="hudMapBtn" style="display:none">MAP</button>
   </div>
   <div class="gbg" id="gbg">
@@ -745,6 +888,8 @@ let currentQ = 0;
 let lives = 3;
 let score = 0;
 let totalCorrect = 0;
+let coins = 0;
+let zoneTreasures = 0;
 let gameData = {};         // scratch per question
 let questionAnswered = false;
 
@@ -760,6 +905,47 @@ function loadStars() {
 function saveStars() {
   try { localStorage.setItem(SAVE_KEY, JSON.stringify(stars)); } catch(e){}
 }
+
+function loadRPG() {
+  try { coins = parseInt(localStorage.getItem("wordquest_coins_v1") || "0", 10); } catch(e){ coins = 0; }
+}
+function saveRPG() {
+  try { localStorage.setItem("wordquest_coins_v1", String(coins)); } catch(e){}
+}
+function heroLevel() {
+  return Math.max(1, Math.floor(getStarCount()/2) + 1);
+}
+const MONSTERS = ["Goblin", "Slime", "Troll", "Word Bat", "Grammar Gremlin", "Shadow Knight", "Riddle Rat", "Spelling Sprite", "Dungeon Dragon", "Noun Gnome", "Verb Viper", "Adjective Ogre"];
+const TREASURES = ["Golden Key", "Magic Scroll", "Ruby Apple", "Hero Shield", "Dragon Coin", "Star Potion", "Quest Gem", "Crystal Book"];
+function currentMonster() {
+  return MONSTERS[(currentZone * 3 + currentQ) % MONSTERS.length];
+}
+function maybeTreasure(correct) {
+  if(!correct) return;
+  if((score > 0 && score % 2 === 0) || currentQ === ZONES[currentZone-1].qs.length-1) {
+    const reward = 5 + heroLevel() * 2;
+    coins += reward;
+    zoneTreasures++;
+    saveRPG();
+    updateHUD();
+    showTreasurePopup(TREASURES[(currentZone + currentQ + zoneTreasures) % TREASURES.length], reward);
+  }
+}
+function showTreasurePopup(item, reward) {
+  const pop = document.createElement('div');
+  pop.className = 'treasure-pop';
+  pop.innerHTML = `<div class="treasure-icon">🎁</div><div class="treasure-title">TREASURE FOUND!</div><div class="treasure-item">${item}</div><div class="treasure-reward">+${reward} COINS</div>`;
+  document.body.appendChild(pop);
+  setTimeout(()=>pop.remove(), 1550);
+}
+function showEnemyHit() {
+  const hit = document.createElement('div');
+  hit.className = 'enemy-hit-pop';
+  hit.textContent = `${currentMonster()} attacks! Lose 1 heart!`;
+  document.body.appendChild(hit);
+  setTimeout(()=>hit.remove(), 1250);
+}
+
 
 // ── SHUFFLE (Fisher-Yates) ────────────────────────────────────
 function shuffle(arr) {
@@ -809,6 +995,7 @@ function restartZone() {
   lives = 3;
   score = 0;
   totalCorrect = 0;
+  zoneTreasures = 0;
   questionAnswered = false;
   // Reset UI
   const z = ZONES[currentZone-1];
@@ -830,14 +1017,14 @@ function isUnlocked(zoneId) {
 }
 
 // ── TITLE ────────────────────────────────────────────────────
-function startGame() { loadStars(); buildMap(); showScreen('worldmap'); }
+function startGame() { loadStars(); loadRPG(); buildMap(); showScreen('worldmap'); }
 
 // ── MAP ──────────────────────────────────────────────────────
 function buildMap() {
   const grid = document.getElementById('mapGrid');
   grid.innerHTML = '';
   const total = getStarCount();
-  document.getElementById('mapSub').textContent = `STARS: ${total} / 12 — CHOOSE YOUR NEXT ZONE!`;
+  document.getElementById('mapSub').textContent = `STARS: ${total} / 12 — COINS: ${coins} — CHOOSE YOUR NEXT QUEST!`;
   ZONES.forEach(z => {
     const unlocked = isUnlocked(z.id);
     const done = stars[z.id] === true;
@@ -857,6 +1044,7 @@ function launchZone(id) {
   lives = 3;
   score = 0;
   totalCorrect = 0;
+  zoneTreasures = 0;
   // Fresh shuffle each new zone attempt
   reshuffleZone(id);
   const z = ZONES[id-1];
@@ -898,6 +1086,8 @@ function updateHUD() {
     hpEl.classList.add('lost');
   }
   document.getElementById('hudPts').textContent = `⭐ ${score}`;
+  const lvlEl = document.getElementById('hudLevel'); if(lvlEl) lvlEl.textContent = heroLevel();
+  const coinsEl = document.getElementById('hudCoins'); if(coinsEl) coinsEl.textContent = `🪙 ${coins}`;
   document.getElementById('progFill').style.width = (currentQ / z.qs.length * 100) + '%';
 }
 
@@ -947,7 +1137,7 @@ function retryFromComplete() {
   document.getElementById('zoneOver').classList.add('hidden');
   // Fresh reshuffle for retry
   reshuffleZone(currentZone);
-  currentQ = 0; lives = 3; score = 0; totalCorrect = 0; questionAnswered = false;
+  currentQ = 0; lives = 3; score = 0; totalCorrect = 0; zoneTreasures = 0; questionAnswered = false;
   const z = ZONES[currentZone-1];
   document.getElementById('hudZone').textContent = z.emoji+' '+z.name.replace('\n',' ');
   document.getElementById('progFill').style.width = '0%';
@@ -962,10 +1152,12 @@ function showFeedback(correct, el, explanation) {
     score++;
     totalCorrect++;
     updateHUD();
+    maybeTreasure(true);
   } else {
     if(el) el.classList.add('wrong');
     lives = Math.max(0, lives-1);
     updateHUD();
+    showEnemyHit();
         if(lives === 0) { setTimeout(triggerGameOver, 900); return; }
     if(lives === 0) {
       setTimeout(triggerGameOver, 900);
@@ -1007,10 +1199,10 @@ function renderQuestion() {
   const area = document.getElementById('gameArea');
   area.innerHTML = '';
 
-  // Zone label banner
+  // Zone label banner + RPG encounter
   const banner = document.createElement('div');
-  banner.style.cssText='font-size:clamp(.4rem,1vw,.52rem);color:rgba(255,255,255,.5);letter-spacing:2px;text-align:center';
-  banner.textContent = `${z.intro}`;
+  banner.className = 'quest-banner';
+  banner.innerHTML = `<div class="enemy-line">⚔️ A wild ${currentMonster()} appears!</div><div class="quest-instruction">${z.intro}</div>`;
   area.appendChild(banner);
 
   switch(z.type) {
@@ -1366,6 +1558,7 @@ function renderMatch(z, q, area) {
             score++;
             totalCorrect++;
             updateHUD();
+            maybeTreasure(true);
             fb.textContent = '✓ ALL MATCHED! AMAZING!';
             addNextBtn(area);
           }
@@ -1375,6 +1568,7 @@ function renderMatch(z, q, area) {
           el.classList.add('bad-match');
           lives = Math.max(0,lives-1);
           updateHUD();
+          showEnemyHit();
           if(lives === 0) { setTimeout(triggerGameOver, 900); return; }
           fb.textContent = '✗ NOT A MATCH!';
           fb.className = 'feedback bad';
@@ -1399,6 +1593,7 @@ function renderMatch(z, q, area) {
 // ═══════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
   loadStars();
+  loadRPG();
 });
 </script>
 </body>
